@@ -1,0 +1,24 @@
+
+<div class="container mt-5">
+    <h4>Blog form</h4>
+<form>
+    <div class="form-group">
+        <label for="">Name</label>
+        <input class="form-control" required name= "name" type="text" 
+        [(ngModel)]="blogObject.BlogName" #name="ngModel">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+            <div *ngIf="name.errors">
+                     Name is required.
+             </div>
+        </div>
+    </div>
+    <div *ngIf="blogObject.BlogName!=''">
+        <button class="btn btn-primary" (click)="submitForm()">Submit</button>
+    </div>
+
+</form>
+</div>
+<div *ngIf="blogList.length >0">
+<app-blog-list [blogList]="blogList"></app-blog-list>
+</div>

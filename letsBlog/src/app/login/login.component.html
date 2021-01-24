@@ -1,0 +1,24 @@
+<form>
+    <div class="container">
+      <div *ngIf="invalidUser" style="background-color: red;">
+        <span>Please enter valid credentials!!</span>
+      </div>
+      <div class="col-md-4">
+        <label for="uname"><b>Username</b></label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" placeholder="Enter Username" [(ngModel)]="User.Name" name="uname" required>
+      </div>
+      
+      <div class="col-md-4">
+        <label for="psw"><b>Password</b></label>
+      </div>
+      <div class="col-md-4">
+        <input type="password" placeholder="Enter Password" [(ngModel)]="User.Password" name="psw" required>
+      </div>
+      
+      <div class="col-md-8">
+      <button class="btn-primary" type="submit" (click)="Login()">Login</button>
+    </div>
+    </div>
+  </form>

@@ -1,0 +1,18 @@
+
+<h4>List of Blogs</h4>
+<br/>
+<div class="container">
+    <div class="col-xs-12 right">
+        <a class="btn btn-primary" [routerLink]="['add/0']">Add</a>
+    </div>
+    <table>
+        <th>NAME</th>
+        <th>ACTION</th>
+        <tr *ngFor="let blog of blogsList let i=index">
+            <td>{{blog.BlogName}}</td>
+            <td><a class="btn btn-info" [routerLink]="['bloglist/edit/',blog.BlogId,i]">Edit</a></td>
+            <td><button class="btn btn-warning" (click)="deleteBlog(blog.BlogId)">Delete</button></td>
+        </tr>
+    </table>
+  </div>
+
